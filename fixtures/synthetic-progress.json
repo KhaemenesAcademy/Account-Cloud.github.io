@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0",
+  "progressId": "progress_demo",
+  "learnerId": "learner_demo",
+  "courseId": "grade-09-demo",
+  "courseStateId": "course_state_demo",
+  "lastLessonId": null,
+  "completionPercent": 0,
+  "recordVersion": 1,
+  "updatedAt": "2026-09-06T00:00:00Z"
+}

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "learnerId": "learner_demo",
+  "familyId": "fam_demo",
+  "institutionalId": "STUDENT-DEMO-0001",
+  "displayName": "Synthetic Learner",
+  "stage": "High School",
+  "grade": "09",
+  "activePathway": "grade-09-prestart",
+  "continuityNote": "Synthetic fixture only - not a real learner.",
+  "recordVersion": 1,
+  "createdAt": "2026-09-06T00:00:00Z",
+  "updatedAt": "2026-09-06T00:00:00Z"
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "adultId": "adult_demo_guardian",
+  "displayName": "Synthetic Guardian",
+  "status": "active",
+  "credentialRef": "credential_demo_nonsecret",
+  "recordVersion": 1,
+  "createdAt": "2026-09-06T00:00:00Z",
+  "updatedAt": "2026-09-06T00:00:00Z"
+}

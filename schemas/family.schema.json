@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/family.schema.json",
+  "title": "Khaemenes Family",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "familyId",
+    "familyLabel",
+    "adultIds",
+    "learnerIds",
+    "recordVersion",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "familyId": {
+      "type": "string",
+      "pattern": "^fam_[A-Za-z0-9_-]+$"
+    },
+    "familyLabel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "adultIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^adult_"
+      }
+    },
+    "learnerIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^learner_"
+      }
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Account Cloud · Synthetic Cross-Device Conflict Test</title>
+<style>
+body{font:16px system-ui;max-width:900px;margin:40px auto;padding:0 20px}
+pre{white-space:pre-wrap;background:#eee;color:#111;padding:15px;border-radius:6px}
+</style>
+</head>
+<body>
+<h1>Synthetic Cross-Device Conflict Test</h1>
+<p>Uses one in-memory canonical record and two simulated device views. It verifies version-conflict semantics only.</p>
+<pre id="out">Running…</pre>
+<script src="../assets/account-cloud-client.js"></script>
+<script>
+(async()=>{
+  const out=document.getElementById("out"),rows=[];
+  const [family,adult,learner,progress]=await Promise.all([
+    fetch("../fixtures/synthetic-family.json").then(r=>r.json()),
+    fetch("../fixtures/synthetic-adult.json").then(r=>r.json()),
+    fetch("../fixtures/synthetic-learner.json").then(r=>r.json()),
+    fetch("../fixtures/synthetic-progress.json").then(r=>r.json())
+  ]);
+
+  const store=new KhaemenesAccountCloud.SyntheticCanonicalStore({family,adult,learner,progress});
+  const client=new KhaemenesAccountCloud.AccountCloudClient(new KhaemenesAccountCloud.SyntheticTransport(store));
+
+  const mac=await client.getLearner("learner_demo");
+  const tablet=await client.getLearner("learner_demo");
+  rows.push(["initial same version",mac.recordVersion===tablet.recordVersion]);
+
+  const first=await client.sync({
+    schemaVersion:"1.0",
+    resourceType:"learner",
+    resourceId:"learner_demo",
+    baseVersion:mac.recordVersion,
+    clientMutationId:"mac_demo_1",
+    sourceDeviceId:"mac_demo",
+    patch:{continuityNote:"Mac synthetic write"}
+  });
+  rows.push(["Mac increments canonical version",first.record.recordVersion===2]);
+
+  let conflict=false;
+  try{
+    await client.sync({
+      schemaVersion:"1.0",
+      resourceType:"learner",
+      resourceId:"learner_demo",
+      baseVersion:tablet.recordVersion,
+      clientMutationId:"tablet_stale_1",
+      sourceDeviceId:"tablet_demo",
+      patch:{continuityNote:"Tablet stale write"}
+    });
+  }catch(error){
+    conflict=error.code==="version_conflict";
+  }
+  rows.push(["stale tablet write blocked",conflict]);
+
+  const refreshed=await client.getLearner("learner_demo");
+  rows.push(["tablet can refresh canonical v2",refreshed.recordVersion===2]);
+
+  const second=await client.sync({
+    schemaVersion:"1.0",
+    resourceType:"learner",
+    resourceId:"learner_demo",
+    baseVersion:refreshed.recordVersion,
+    clientMutationId:"tablet_demo_2",
+    sourceDeviceId:"tablet_demo",
+    patch:{continuityNote:"Tablet post-refresh write"}
+  });
+  rows.push(["tablet post-refresh write becomes v3",second.record.recordVersion===3]);
+
+  const pass=rows.every(([,ok])=>ok);
+  out.textContent=(pass?"PASS":"FAIL")+"\n\n"+rows.map(([label,ok])=>`${ok?"PASS":"FAIL"} · ${label}`).join("\n");
+})();
+</script>
+</body>
+</html>

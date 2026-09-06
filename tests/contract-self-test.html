@@ -1,0 +1,32 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Account Cloud Contract Self-Test</title>
+<pre id="out">Running…</pre>
+<script>
+(async()=>{
+  const paths=[
+    "../schemas/adult-account.schema.json",
+    "../schemas/family.schema.json",
+    "../schemas/family-access.schema.json",
+    "../schemas/learner.schema.json",
+    "../schemas/learner-progress.schema.json",
+    "../schemas/course-state.schema.json",
+    "../schemas/session-view.schema.json",
+    "../schemas/sync-envelope.schema.json"
+  ];
+  const rows=[];
+  for(const path of paths){
+    try{
+      const response=await fetch(path,{cache:"no-store"});
+      const schema=await response.json();
+      rows.push([path,response.ok && !!schema.$schema && !!schema.title]);
+    }catch{
+      rows.push([path,false]);
+    }
+  }
+  const pass=rows.every(([,ok])=>ok);
+  document.getElementById("out").textContent=
+    (pass?"PASS":"FAIL")+"\n\n"+
+    rows.map(([path,ok])=>`${ok?"PASS":"FAIL"} · ${path}`).join("\n");
+})();
+</script>

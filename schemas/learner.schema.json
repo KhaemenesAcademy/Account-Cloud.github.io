@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/learner.schema.json",
+  "title": "Khaemenes Learner",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "learnerId",
+    "familyId",
+    "institutionalId",
+    "stage",
+    "grade",
+    "activePathway",
+    "recordVersion",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "learnerId": {
+      "type": "string",
+      "pattern": "^learner_"
+    },
+    "familyId": {
+      "type": "string",
+      "pattern": "^fam_"
+    },
+    "institutionalId": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 80
+    },
+    "displayName": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "stage": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "grade": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 40
+    },
+    "activePathway": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "continuityNote": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

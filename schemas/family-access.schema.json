@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/family-access.schema.json",
+  "title": "Khaemenes Family Access",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "accessId",
+    "familyId",
+    "adultId",
+    "learnerIds",
+    "permissions",
+    "status",
+    "recordVersion",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "accessId": {
+      "type": "string",
+      "pattern": "^access_"
+    },
+    "familyId": {
+      "type": "string",
+      "pattern": "^fam_"
+    },
+    "adultId": {
+      "type": "string",
+      "pattern": "^adult_"
+    },
+    "learnerIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^learner_"
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      }
+    },
+    "status": {
+      "enum": [
+        "active",
+        "revoked",
+        "pending"
+      ]
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

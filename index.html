@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Khaemenes Academy Account Cloud - customized Mini AGI Cloud synthetic testbed for sovereign family and learner continuity.">
+<title>Khaemenes Academy · Account Cloud</title>
+<link rel="stylesheet" href="./assets/account-cloud.css">
+</head>
+<body>
+<main class="shell">
+  <header>
+    <div>
+      <div class="eyebrow">Khaemenes Academy · Customized Mini AGI Cloud</div>
+      <h1>Account Cloud</h1>
+      <p class="subtitle">
+        Family and learner continuity control surface for the future protected STOS account authority.
+        This GitHub build uses synthetic data only.
+      </p>
+    </div>
+    <div class="badges">
+      <span class="badge good">v0.1.0 · Synthetic</span>
+      <span class="badge warn">No production data</span>
+      <span class="badge">STOS adapter pending</span>
+    </div>
+  </header>
+
+  <div class="notice">
+    <strong>Boundary:</strong>
+    GitHub hosts the source, contracts, interface, and tests. The canonical family/student records
+    will live behind the protected STOS boundary and will later bind to the existing STOS
+    internal-cloud/storage-fabric layer.
+  </div>
+
+  <section class="cloud-grid">
+    <!-- Original Mini AGI concept: Cloud Storage -->
+    <article class="panel">
+      <div class="panel-head">
+        <div class="kicker">Mini AGI Module 01</div>
+        <h2>Cloud Storage</h2>
+      </div>
+      <div class="panel-body">
+        <div class="toolbar">
+          <button id="reset-cloud">Reset Synthetic Cloud</button>
+          <button id="show-audit" class="secondary">Audit</button>
+        </div>
+        <div id="record-list" class="record-list"></div>
+      </div>
+    </article>
+
+    <!-- Original Mini AGI concept: Directory -->
+    <article class="panel">
+      <div class="panel-head">
+        <div class="kicker">Mini AGI Module 02</div>
+        <h2>Account Directory</h2>
+      </div>
+      <div class="panel-body">
+        <div class="toolbar">
+          <button id="show-family">Family</button>
+          <button id="show-learner">Learner</button>
+        </div>
+        <div id="directory-tree" class="tree"></div>
+      </div>
+    </article>
+
+    <!-- Original Mini AGI concept: Interface -->
+    <article class="panel">
+      <div class="panel-head">
+        <div class="kicker">Mini AGI Module 03</div>
+        <h2>Admin Interface</h2>
+      </div>
+      <div class="panel-body">
+        <div class="toolbar">
+          <button id="mac-write">Mac writes</button>
+          <button id="tablet-stale">Tablet stale write</button>
+          <button id="tablet-refresh" class="secondary">Tablet refresh</button>
+          <button id="tablet-write">Tablet writes</button>
+        </div>
+
+        <label for="command">Account Cloud command</label>
+        <input id="command" autocomplete="off" placeholder='Try: "help" or "show cloud"'>
+        <button id="run-command">Run</button>
+
+        <label>Output / Receipt</label>
+        <div id="console" class="console" aria-live="polite">Loading synthetic cloud…</div>
+      </div>
+    </article>
+  </section>
+
+  <section class="footer-grid">
+    <div class="stat"><strong id="stat-families">0</strong><span>Synthetic families</span></div>
+    <div class="stat"><strong id="stat-adults">0</strong><span>Synthetic adults</span></div>
+    <div class="stat"><strong id="stat-learners">0</strong><span>Synthetic learners</span></div>
+    <div class="stat"><strong id="stat-audit">0</strong><span>Audit events</span></div>
+  </section>
+</main>
+
+<script src="./assets/account-cloud-config.example.js"></script>
+<script src="./assets/account-cloud-client.js"></script>
+<script src="./assets/account-cloud-ui.js"></script>
+</body>
+</html>

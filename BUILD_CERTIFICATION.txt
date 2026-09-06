@@ -1,0 +1,27 @@
+KHAEMENES ACCOUNT CLOUD v0.1.0
+CUSTOMIZED MINI AGI CLOUD FOUNDATION
+
+STATUS: SOURCE / CONTRACT / SYNTHETIC TESTBED BUILT
+
+FILES: 35
+REAL ACCOUNT DATA: NONE
+PRODUCTION AUTHORITY: NONE
+GITHUB PAGES DATABASE ROLE: PROHIBITED
+STOS STORAGE ADAPTER: CONTRACT DEFINED / IMPLEMENTATION PENDING
+CROSS-DEVICE CONFLICT TEST: INCLUDED
+SCHEMAS: INCLUDED
+SYNTHETIC FIXTURES: INCLUDED
+
+SECURITY INVARIANT:
+No password, password hash, token, private key, real student record,
+real family record, or production secret belongs in this package.
+
+NEXT:
+1. restore GitHub push permission for Account-Cloud.github.io;
+2. publish source package to that repository;
+3. review/seal repository tree;
+4. import to STOS;
+5. inspect existing STOS internal-cloud/storage-fabric runtime API;
+6. implement protected adapter;
+7. run synthetic Mac/tablet acceptance;
+8. only then consider real account migration.

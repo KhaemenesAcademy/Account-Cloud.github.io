@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/course-state.schema.json",
+  "title": "Course State",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "courseStateId",
+    "learnerId",
+    "courseId",
+    "status",
+    "masteryPercent",
+    "recordVersion",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "courseStateId": {
+      "type": "string",
+      "pattern": "^course_state_"
+    },
+    "learnerId": {
+      "type": "string",
+      "pattern": "^learner_"
+    },
+    "courseId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "status": {
+      "enum": [
+        "not-started",
+        "active",
+        "review",
+        "complete"
+      ]
+    },
+    "masteryPercent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Mirror of course authority; Account Cloud does not manufacture mastery."
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

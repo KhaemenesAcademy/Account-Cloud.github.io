@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/sync-envelope.schema.json",
+  "title": "Account Cloud Sync Envelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "resourceType",
+    "resourceId",
+    "baseVersion",
+    "clientMutationId",
+    "sourceDeviceId",
+    "patch"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "resourceType": {
+      "enum": [
+        "adult",
+        "family",
+        "family-access",
+        "learner",
+        "learner-progress",
+        "course-state"
+      ]
+    },
+    "resourceId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "baseVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "clientMutationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "sourceDeviceId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "patch": {
+      "type": "object",
+      "minProperties": 1
+    }
+  }
+}

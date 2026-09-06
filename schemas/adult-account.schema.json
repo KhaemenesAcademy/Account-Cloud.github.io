@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/adult-account.schema.json",
+  "title": "Khaemenes Adult Account",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "adultId",
+    "status",
+    "recordVersion",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "adultId": {
+      "type": "string",
+      "pattern": "^adult_[A-Za-z0-9_-]+$"
+    },
+    "displayName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "status": {
+      "enum": [
+        "active",
+        "locked",
+        "disabled",
+        "pending"
+      ]
+    },
+    "credentialRef": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Opaque server credential authority reference, never a password/hash."
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

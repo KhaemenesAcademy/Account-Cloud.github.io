@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/learner-progress.schema.json",
+  "title": "Learner Progress",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "progressId",
+    "learnerId",
+    "courseId",
+    "courseStateId",
+    "recordVersion",
+    "updatedAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "progressId": {
+      "type": "string",
+      "pattern": "^progress_"
+    },
+    "learnerId": {
+      "type": "string",
+      "pattern": "^learner_"
+    },
+    "courseId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "courseStateId": {
+      "type": "string",
+      "pattern": "^course_state_"
+    },
+    "lastLessonId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 160
+    },
+    "completionPercent": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "recordVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
