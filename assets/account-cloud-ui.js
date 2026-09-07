@@ -207,6 +207,20 @@
       "show family":showFamily,
       "show learner":showLearner,
       "show audit":showAudit,
+      "show lineage":async()=>log("SOVEREIGN MINI CLOUD LINEAGE",{
+        packageVersion:"0.1.1",
+        lineage:"Mini AGI Cloud -> Sovereign Mini Cloud OS · Code Capsule -> Khaemenes Account Cloud",
+        sourceMarker:"🟣",
+        manifest:"capsule-manifest.json",
+        localVault:"browser-local encrypted recovery/reference only",
+        canonicalTarget:"protected STOS internal-cloud/storage-fabric adapter"
+      }),
+      "show storage boundary":async()=>log("STORAGE AUTHORITY BOUNDARY",{
+        github:"source/contracts/UI/synthetic tests only",
+        browserLocalStorage:"non-canonical",
+        browserIndexedDbVault:"encrypted but non-canonical and device-local",
+        stos:"future durable canonical family/learner authority after adapter commissioning"
+      }),
       "mac write":macWrite,
       "tablet stale":tabletStaleWrite,
       "tablet refresh":tabletRefresh,
@@ -218,6 +232,8 @@ show directory
 show family
 show learner
 show audit
+show lineage
+show storage boundary
 mac write
 tablet stale
 tablet refresh

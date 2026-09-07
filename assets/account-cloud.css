@@ -180,14 +180,36 @@ label{
 }
 .stat strong{font-size:1.25rem;display:block}
 .stat span{color:var(--muted);font-size:.76rem}
+
+.lineage-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin:0 0 22px;
+}
+.lineage-card{
+  min-height:118px;
+  padding:13px 14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:linear-gradient(180deg,rgba(124,58,237,.08),rgba(255,255,255,.012));
+}
+.lineage-card.caution{border-color:rgba(208,170,114,.42)}
+.lineage-card.authority{border-color:rgba(141,182,156,.42)}
+.lineage-card strong{display:block;margin:4px 0 5px;font-family:Georgia,"Times New Roman",serif;font-weight:500}
+.lineage-card small{display:block;color:var(--muted);font-size:.73rem;line-height:1.45}
+.lineage-kicker{color:#c4b5fd;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem}
+
 @media(max-width:1050px){
   header{grid-template-columns:1fr}
   .badges{justify-content:flex-start}
+  .lineage-grid{grid-template-columns:repeat(2,1fr)}
   .cloud-grid{grid-template-columns:1fr}
   .panel{min-height:auto}
   .footer-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
   .shell{padding:20px 14px 40px}
+  .lineage-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }

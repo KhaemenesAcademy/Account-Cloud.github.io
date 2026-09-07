@@ -1,6 +1,6 @@
 <!doctype html>
 <meta charset="utf-8">
-<title>Account Cloud Contract Self-Test</title>
+<title>Account Cloud v0.1.1 Contract Self-Test</title>
 <pre id="out">Running…</pre>
 <script>
 (async()=>{
@@ -24,6 +24,14 @@
       rows.push([path,false]);
     }
   }
+  try{
+    const manifest=await fetch("../capsule-manifest.json",{cache:"no-store"}).then(r=>r.json());
+    rows.push(["../capsule-manifest.json",manifest.packageVersion==="0.1.1" && manifest.sourceMarker==="🟣" && manifest.realAccountData===false]);
+  }catch{ rows.push(["../capsule-manifest.json",false]); }
+  try{
+    const version=(await fetch("../VERSION",{cache:"no-store"}).then(r=>r.text())).trim();
+    rows.push(["../VERSION",version==="0.1.1"]);
+  }catch{ rows.push(["../VERSION",false]); }
   const pass=rows.every(([,ok])=>ok);
   document.getElementById("out").textContent=
     (pass?"PASS":"FAIL")+"\n\n"+

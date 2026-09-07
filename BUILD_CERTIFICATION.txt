@@ -1,27 +1,46 @@
-KHAEMENES ACCOUNT CLOUD v0.1.0
-CUSTOMIZED MINI AGI CLOUD FOUNDATION
+KHAEMENES ACCOUNT CLOUD v0.1.1
+SOVEREIGN MINI CLOUD OS / CODE CAPSULE ALIGNMENT BUILD
 
-STATUS: SOURCE / CONTRACT / SYNTHETIC TESTBED BUILT
+STATUS: SOURCE / CONTRACT / SYNTHETIC TESTBED UPDATED AND SEALED
 
-FILES: 35
+BUILD CHANGES:
+- updated Mini AGI lineage to Sovereign Mini Cloud OS · Code Capsule;
+- preserved newest Sovereign Mini Cloud OS source as a reference witness;
+- adopted the 🟣 Code Capsule source/provenance seam convention;
+- added capsule-manifest.json provenance metadata;
+- added explicit Local Vault Boundary contract;
+- added Sovereign Mini Cloud OS alignment documentation;
+- clarified encrypted browser Private/Black Hole Vault is local recovery/reference only;
+- preserved STOS internal-cloud/storage-fabric as the canonical persistence target;
+- retained synthetic Mac/tablet compare-and-swap conflict test behavior;
+- added manual GitHub upload instructions.
+
+REFERENCE SOURCE SHA-256:
+f1575a7cf8dc0ddf213bee32e6e94050567a6c35d542625f9739d07e18c20bb8
+
+VALIDATION:
+JSON PARSE: 13/13 PASS
+JAVASCRIPT SYNTAX: 3/3 PASS
+SYNTHETIC VERSION INCREMENT: PASS
+SYNTHETIC STALE WRITE CONFLICT: PASS
+SYNTHETIC REFRESH THEN WRITE: PASS
 REAL ACCOUNT DATA: NONE
 PRODUCTION AUTHORITY: NONE
 GITHUB PAGES DATABASE ROLE: PROHIBITED
+BROWSER LOCALSTORAGE AUTHORITY ROLE: PROHIBITED
+BROWSER PRIVATE VAULT ACCOUNT-DB ROLE: PROHIBITED
 STOS STORAGE ADAPTER: CONTRACT DEFINED / IMPLEMENTATION PENDING
-CROSS-DEVICE CONFLICT TEST: INCLUDED
-SCHEMAS: INCLUDED
-SYNTHETIC FIXTURES: INCLUDED
 
 SECURITY INVARIANT:
-No password, password hash, token, private key, real student record,
-real family record, or production secret belongs in this package.
+No password, password hash, live token, private key, real student record,
+real family record, private educational record, or production secret belongs
+in this package.
 
-NEXT:
-1. restore GitHub push permission for Account-Cloud.github.io;
-2. publish source package to that repository;
-3. review/seal repository tree;
-4. import to STOS;
-5. inspect existing STOS internal-cloud/storage-fabric runtime API;
-6. implement protected adapter;
-7. run synthetic Mac/tablet acceptance;
-8. only then consider real account migration.
+NEXT RUNTIME GATE:
+1. manually publish this v0.1.1 source to Account-Cloud.github.io;
+2. verify repository tree/checksums;
+3. import/materialize Account Cloud into STOS;
+4. read-only inspect existing STOS internal-cloud/storage-fabric runtime APIs;
+5. implement the protected adapter without creating a duplicate persistence engine;
+6. run synthetic Mac -> server -> tablet and tablet -> server -> Mac acceptance;
+7. only after that gate passes, consider real account migration.

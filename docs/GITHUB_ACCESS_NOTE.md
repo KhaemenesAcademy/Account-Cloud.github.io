@@ -1,17 +1,13 @@
-# GitHub Access Note
+# GitHub Access / Manual Upload Note
 
-The KhaemenesAcademy GitHub App installation uses **selected repository access**.
+At the time v0.1.1 was prepared, the ChatGPT GitHub connection could read `KhaemenesAcademy/Account-Cloud.github.io` but still reported `push:false` even after the KhaemenesAcademy GitHub App installation was changed to all repositories.
 
-The repository `KhaemenesAcademy/Account-Cloud.github.io` must be included in that installation before ChatGPT can write to it.
+Therefore v0.1.1 is intentionally packaged for a manual GitHub upload.
 
-Verification gate:
+## Manual publish rule
 
-```text
-repository permission:
-pull: true
-push: true
-```
+Extract the ZIP locally and upload the **contents inside** the `Khaemenes_Account_Cloud_v0.1.1` folder to the root of `KhaemenesAcademy/Account-Cloud.github.io`.
 
-A readable repository with `push:false` is not writable.
+Do not upload real family/student data, secrets, credentials, browser vault contents, or production configuration.
 
-This is an installation repository-selection issue, not a reason to use a different GitHub account or a general GitHub credential.
+After upload, verify the repository tree against `SHA256SUMS.txt`.

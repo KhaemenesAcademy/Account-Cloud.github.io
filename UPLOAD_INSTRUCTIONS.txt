@@ -1,0 +1,23 @@
+KHAEMENES ACADEMY ACCOUNT CLOUD v0.1.1
+MANUAL GITHUB UPLOAD
+
+Target repository:
+KhaemenesAcademy/Account-Cloud.github.io
+
+1. Extract Khaemenes_Account_Cloud_v0.1.1.zip on the Mac.
+2. Open the extracted Khaemenes_Account_Cloud_v0.1.1 folder.
+3. Upload the CONTENTS of that folder to the ROOT of the GitHub repository.
+   index.html must end up at repository root, not inside a nested version folder.
+4. Preserve the folders exactly: assets, contracts, docs, fixtures, reference, schemas, tests.
+5. Suggested commit message:
+   Account Cloud v0.1.1 · Sovereign Mini Cloud OS alignment
+6. After GitHub saves the upload, verify README.md, VERSION, capsule-manifest.json,
+   index.html, and SHA256SUMS.txt are present at repository root.
+
+DO NOT UPLOAD:
+- real family/student records
+- passwords or password hashes
+- session/recovery tokens
+- private keys/API keys
+- browser Private Vault contents
+- production STOS credentials or secrets

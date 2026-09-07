@@ -36,3 +36,10 @@ Owns:
 - cross-device continuity.
 
 The Mini AGI Account Cloud UI is a control/view surface. Displaying a record does not make the UI the authority.
+
+
+## Sovereign Mini Cloud OS local-vault boundary
+
+The preserved Sovereign Mini Cloud OS reference contains an encrypted browser-local Private/Black Hole Vault. Encryption at rest is useful, but locality remains locality: the vault is not a server, cross-device authority, or Academy credential database.
+
+The Account Cloud UI may describe or inspect this boundary, but production family/learner continuity must resolve through the protected STOS storage authority.

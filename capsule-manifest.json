@@ -1,0 +1,19 @@
+{
+  "schema": "khaemenes-code-capsule",
+  "version": 1,
+  "packageVersion": "0.1.1",
+  "integrationMode": "native-modular-account-cloud",
+  "entry": "index.html",
+  "cssFile": "assets/account-cloud.css",
+  "jsFiles": [
+    "assets/account-cloud-config.example.js",
+    "assets/account-cloud-client.js",
+    "assets/account-cloud-ui.js"
+  ],
+  "sourceMarker": "🟣",
+  "lineageReference": "reference/sovereign-mini-cloud-os-code-capsule.html",
+  "lineageReferenceSha256": "f1575a7cf8dc0ddf213bee32e6e94050567a6c35d542625f9739d07e18c20bb8",
+  "canonicalStorage": "protected STOS internal-cloud/storage-fabric via commissioned adapter",
+  "browserLocalVaultRole": "reference/recovery only; non-canonical",
+  "realAccountData": false
+}
