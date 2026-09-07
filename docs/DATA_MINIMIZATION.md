@@ -1,15 +1,7 @@
 # Data Minimization
 
-The protected Account Cloud should store only what is needed for identity, authorized relationships, account continuity, synchronization, and required audit.
+Collect only what Academy continuity requires.
 
-Avoid unnecessary collection of sensitive information.
+For younger learners, do not require child email, phone number, legal last name, exact birth date, address, or unrelated profile data merely to use coursework. Adult verified contact belongs with protected credential/account authority and should not be duplicated into ordinary learner records.
 
-Prefer:
-
-- opaque internal IDs;
-- display-safe names;
-- minimum family relationship data;
-- minimum continuity metadata;
-- separate detailed academic evidence when practical.
-
-Never expose protected fields through GitHub Pages or public diagnostic output.
+Public/synthetic fixtures use fictional identifiers only. Audit events use codes and references instead of full sensitive request bodies.

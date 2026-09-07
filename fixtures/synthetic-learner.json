@@ -1,14 +1,16 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "2.0",
   "learnerId": "learner_demo",
   "familyId": "fam_demo",
-  "institutionalId": "STUDENT-DEMO-0001",
+  "accountSubjectRef": "auth_subject_demo_student",
+  "institutionalId": "KA-2026-A1B2C3D4E5F60718293A",
+  "institutionalIdStatus": "confirmed",
   "displayName": "Synthetic Learner",
-  "stage": "High School",
+  "stage": "high",
   "grade": "09",
   "activePathway": "grade-09-prestart",
   "continuityNote": "Synthetic fixture only - not a real learner.",
   "recordVersion": 1,
-  "createdAt": "2026-09-06T00:00:00Z",
-  "updatedAt": "2026-09-06T00:00:00Z"
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z"
 }

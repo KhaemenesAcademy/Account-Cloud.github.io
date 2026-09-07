@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "2.0",
+  "sessionViewId": "sessionview_demo",
+  "authenticated": true,
+  "sessionBoundary": "wend-v0.1",
+  "authorizationAuthority": false,
+  "actorType": "adult",
+  "adultId": "adult_demo_guardian",
+  "learnerId": null,
+  "familyIds": [
+    "fam_demo"
+  ],
+  "learnerIds": [
+    "learner_demo"
+  ],
+  "institutionalId": null,
+  "displayPermissions": [
+    "learner.view"
+  ],
+  "placement": null,
+  "expiresAt": null
+}

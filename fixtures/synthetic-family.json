@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "2.0",
   "familyId": "fam_demo",
-  "familyLabel": "Synthetic Test Family",
+  "familyLabel": "Synthetic Family",
   "adultIds": [
     "adult_demo_guardian"
   ],
@@ -9,6 +9,6 @@
     "learner_demo"
   ],
   "recordVersion": 1,
-  "createdAt": "2026-09-06T00:00:00Z",
-  "updatedAt": "2026-09-06T00:00:00Z"
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z"
 }

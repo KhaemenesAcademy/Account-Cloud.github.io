@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/v2/audit-event.schema.json",
+  "title": "Account Cloud Audit Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "eventId",
+    "eventType",
+    "resourceType",
+    "resourceId",
+    "actorType",
+    "actorId",
+    "decision",
+    "at"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "eventId": {
+      "type": "string",
+      "pattern": "^audit_"
+    },
+    "eventType": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "resourceType": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "resourceId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "actorType": {
+      "enum": [
+        "adult",
+        "learner",
+        "educator",
+        "admin",
+        "system"
+      ]
+    },
+    "actorId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "decision": {
+      "enum": [
+        "allowed",
+        "denied",
+        "system"
+      ]
+    },
+    "sourceDeviceId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "clientMutationId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "fromVersion": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "toVersion": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "detailCodes": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "maxLength": 80
+      }
+    },
+    "at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "synthetic": {
+      "type": "boolean"
+    }
+  }
+}

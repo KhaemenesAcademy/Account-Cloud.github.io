@@ -1,13 +1,5 @@
-# GitHub Access / Manual Upload Note
+# GitHub Access Note
 
-At the time v0.1.1 was prepared, the ChatGPT GitHub connection could read `KhaemenesAcademy/Account-Cloud.github.io` but still reported `push:false` even after the KhaemenesAcademy GitHub App installation was changed to all repositories.
+GitHub is an interim source/build/test location and eventual private emergency/archive backup. It is never the production family/student database.
 
-Therefore v0.1.1 is intentionally packaged for a manual GitHub upload.
-
-## Manual publish rule
-
-Extract the ZIP locally and upload the **contents inside** the `Khaemenes_Account_Cloud_v0.1.1` folder to the root of `KhaemenesAcademy/Account-Cloud.github.io`.
-
-Do not upload real family/student data, secrets, credentials, browser vault contents, or production configuration.
-
-After upload, verify the repository tree against `SHA256SUMS.txt`.
+Before sovereign cutover: use GitHub for source review and sealed release intake only. After the sovereign replacement is live, verified, sealed, and no runtime/public path depends on GitHub, the repository may be made private and retained as emergency/off-site source storage.

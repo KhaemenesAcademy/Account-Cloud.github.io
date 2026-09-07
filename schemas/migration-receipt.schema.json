@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/v2/migration-receipt.schema.json",
+  "title": "Account Cloud Migration Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "receiptId",
+    "sourceKind",
+    "sourceDeviceId",
+    "familyId",
+    "learnerIds",
+    "result",
+    "createdAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "receiptId": {
+      "type": "string",
+      "pattern": "^migration_"
+    },
+    "sourceKind": {
+      "enum": [
+        "academy-browser-local",
+        "legacy-server",
+        "manual-authorized"
+      ]
+    },
+    "sourceDeviceId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "familyId": {
+      "type": "string",
+      "pattern": "^fam_"
+    },
+    "learnerIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^learner_"
+      }
+    },
+    "legacyAccountMappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "learnerId",
+          "legacyLocalAccountId",
+          "accountLinkId"
+        ],
+        "properties": {
+          "learnerId": {
+            "type": "string",
+            "pattern": "^learner_"
+          },
+          "legacyLocalAccountId": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "accountLinkId": {
+            "type": "string",
+            "pattern": "^acctlink_"
+          }
+        }
+      }
+    },
+    "result": {
+      "enum": [
+        "accepted",
+        "conflict",
+        "rejected",
+        "partial"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "synthetic": {
+      "type": "boolean"
+    }
+  }
+}

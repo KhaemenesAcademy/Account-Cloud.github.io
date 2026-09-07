@@ -1,12 +1,14 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/v2/adult-account.schema.json",
-  "title": "Khaemenes Adult Continuity Account",
+  "$id": "khaemenes://account-cloud/v2/institutional-id.schema.json",
+  "title": "Khaemenes Institutional ID Mapping",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schemaVersion",
-    "adultId",
+    "institutionalId",
+    "learnerId",
+    "kind",
     "status",
     "recordVersion",
     "createdAt",
@@ -16,30 +18,34 @@
     "schemaVersion": {
       "const": "2.0"
     },
-    "adultId": {
+    "institutionalId": {
       "type": "string",
-      "pattern": "^adult_[A-Za-z0-9_-]+$"
+      "pattern": "^(KA|KS)-\\d{4}-(?:[A-F0-9]{10}|[A-F0-9]{20})$"
     },
-    "displayName": {
+    "learnerId": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 120
+      "pattern": "^learner_"
+    },
+    "kind": {
+      "enum": [
+        "student",
+        "scholar"
+      ]
     },
     "status": {
       "enum": [
-        "active",
-        "locked",
-        "disabled",
-        "pending"
+        "provisional",
+        "confirmed",
+        "migrated",
+        "retired"
       ]
     },
-    "authSubjectRef": {
+    "previousInstitutionalId": {
       "type": [
         "string",
         "null"
       ],
-      "maxLength": 200,
-      "description": "Opaque protected credential-authority subject reference; not a password/hash/token."
+      "maxLength": 80
     },
     "recordVersion": {
       "type": "integer",

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/family-access.schema.json",
-  "title": "Khaemenes Family Access",
+  "$id": "khaemenes://account-cloud/v2/family-access.schema.json",
+  "title": "Khaemenes Adult-to-Learner Access",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -9,7 +9,7 @@
     "accessId",
     "familyId",
     "adultId",
-    "learnerIds",
+    "learnerId",
     "permissions",
     "status",
     "recordVersion",
@@ -18,7 +18,7 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "1.0"
+      "const": "2.0"
     },
     "accessId": {
       "type": "string",
@@ -32,13 +32,9 @@
       "type": "string",
       "pattern": "^adult_"
     },
-    "learnerIds": {
-      "type": "array",
-      "uniqueItems": true,
-      "items": {
-        "type": "string",
-        "pattern": "^learner_"
-      }
+    "learnerId": {
+      "type": "string",
+      "pattern": "^learner_"
     },
     "permissions": {
       "type": "array",

@@ -1,48 +1,29 @@
 # Sovereign Runtime Plan
 
 ## Source stage
-
-Build and review in:
-
-`KhaemenesAcademy/Account-Cloud.github.io`
-
-GitHub remains source/contract/testbed only.
+Build/review in `KhaemenesAcademy/Account-Cloud.github.io`. GitHub is source/contract/testbed only.
 
 ## STOS intake stage
-
-1. create sealed source ZIP;
+1. preserve this sealed ZIP;
 2. import through STOS repository intake;
 3. verify SHA/tree identity;
-4. materialize read-only with Viaduct;
-5. preserve source/runtime identity separately.
+4. materialize with Viaduct according to existing STOS directory/repository rules;
+5. preserve source/runtime identity separately;
+6. do not infer repository state from the left-column organizational view alone.
 
 ## Adapter stage
-
-Read-only inspect the existing STOS storage primitives before implementing the adapter.
-
-Target existing family:
-
-- internal cloud
-- storage fabric
-- schema/instance wrappers
-
-Do not create a competing generic storage subsystem unless the existing primitives are proven insufficient.
+Read-only inspect the existing STOS internal-cloud/storage-fabric APIs. Bind only after required durability/atomicity guarantees are proven. Do not modify NextJS.
 
 ## Protected application stage
-
-Target:
-
 ```text
-Nexus
-  -> Buddy
-  -> Klik
-  -> Avouch
-  -> Account Cloud authority
-  -> STOS storage fabric
+Academy Browser
+    -> Wend
+    -> Bunya / Account Authority
+    -> Buddy / Klik / Avouch as commissioned
+    -> Khaemenes Account Cloud
+    -> native STOS storage fabric
+    -> ADMIN safe Data Bridge
 ```
 
 ## Acceptance stage
-
-Use synthetic family/adult/learner records first.
-
-Real family/student data is prohibited until the synthetic cross-device gate is sealed.
+Use synthetic identities only until the full Mac/tablet gate is sealed. Preserve the existing Mac local profile as migration/recovery evidence until acceptance succeeds.

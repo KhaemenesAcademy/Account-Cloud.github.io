@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "2.0",
+  "linkId": "acctlink_demo_learner",
+  "subjectType": "learner",
+  "subjectId": "learner_demo",
+  "authSubjectRef": "auth_subject_demo_student",
+  "legacyLocalAccountId": "learneracct_demo_legacy",
+  "status": "active",
+  "recordVersion": 1,
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z"
+}

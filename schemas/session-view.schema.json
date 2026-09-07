@@ -1,24 +1,63 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/session-view.schema.json",
-  "title": "Display-Safe Session View",
+  "$id": "khaemenes://account-cloud/v2/session-view.schema.json",
+  "title": "Wend-Safe Display Session View",
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "authenticated"
+    "schemaVersion",
+    "sessionViewId",
+    "authenticated",
+    "sessionBoundary",
+    "authorizationAuthority"
   ],
   "properties": {
+    "schemaVersion": {
+      "const": "2.0"
+    },
+    "sessionViewId": {
+      "type": "string",
+      "pattern": "^sessionview_"
+    },
     "authenticated": {
       "type": "boolean"
+    },
+    "sessionBoundary": {
+      "const": "wend-v0.1"
+    },
+    "authorizationAuthority": {
+      "const": false
+    },
+    "actorType": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "adult",
+        "learner",
+        "educator",
+        "admin",
+        null
+      ]
     },
     "adultId": {
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "maxLength": 180
+    },
+    "learnerId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
     },
     "familyIds": {
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "type": "string",
         "pattern": "^fam_"
@@ -26,9 +65,63 @@
     },
     "learnerIds": {
       "type": "array",
+      "uniqueItems": true,
       "items": {
         "type": "string",
         "pattern": "^learner_"
+      }
+    },
+    "institutionalId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 80
+    },
+    "displayPermissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "maxLength": 80
+      }
+    },
+    "placement": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "stage": {
+          "enum": [
+            "preschool",
+            "kindergarten",
+            "elementary",
+            "middle",
+            "high",
+            "higher"
+          ]
+        },
+        "grade": {
+          "enum": [
+            "pre-k",
+            "k",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            null
+          ]
+        }
       }
     },
     "expiresAt": {
@@ -37,10 +130,6 @@
         "null"
       ],
       "format": "date-time"
-    },
-    "authority": {
-      "type": "string",
-      "maxLength": 80
     }
   }
 }

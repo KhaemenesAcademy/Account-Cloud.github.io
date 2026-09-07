@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "khaemenes://account-cloud/v2/recovery-receipt.schema.json",
+  "title": "Account Cloud Recovery Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "receiptId",
+    "subjectType",
+    "subjectId",
+    "recoveryClass",
+    "status",
+    "sessionsInvalidated",
+    "occurredAt"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "receiptId": {
+      "type": "string",
+      "pattern": "^recovery_"
+    },
+    "subjectType": {
+      "enum": [
+        "adult",
+        "learner"
+      ]
+    },
+    "subjectId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "recoveryClass": {
+      "enum": [
+        "guardian-student-reset",
+        "adult-side-channel",
+        "account-unlock"
+      ]
+    },
+    "status": {
+      "enum": [
+        "requested",
+        "completed",
+        "expired",
+        "revoked"
+      ]
+    },
+    "sessionsInvalidated": {
+      "type": "boolean"
+    },
+    "auditEventId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 180
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "synthetic": {
+      "type": "boolean"
+    }
+  }
+}

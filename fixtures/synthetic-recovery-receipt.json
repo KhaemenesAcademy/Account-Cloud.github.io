@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "receiptId": "recovery_demo_001",
+  "subjectType": "learner",
+  "subjectId": "learner_demo",
+  "recoveryClass": "guardian-student-reset",
+  "status": "completed",
+  "sessionsInvalidated": true,
+  "auditEventId": "audit_demo_recovery_001",
+  "occurredAt": "2026-09-07T00:00:00Z",
+  "synthetic": true
+}

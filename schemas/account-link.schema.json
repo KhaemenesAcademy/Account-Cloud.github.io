@@ -1,12 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/v2/adult-account.schema.json",
-  "title": "Khaemenes Adult Continuity Account",
+  "$id": "khaemenes://account-cloud/v2/account-link.schema.json",
+  "title": "Protected Account Subject Link",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "schemaVersion",
-    "adultId",
+    "linkId",
+    "subjectType",
+    "subjectId",
+    "authSubjectRef",
     "status",
     "recordVersion",
     "createdAt",
@@ -16,30 +19,40 @@
     "schemaVersion": {
       "const": "2.0"
     },
-    "adultId": {
+    "linkId": {
       "type": "string",
-      "pattern": "^adult_[A-Za-z0-9_-]+$"
+      "pattern": "^acctlink_"
     },
-    "displayName": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 120
-    },
-    "status": {
+    "subjectType": {
       "enum": [
-        "active",
-        "locked",
-        "disabled",
-        "pending"
+        "adult",
+        "learner"
       ]
     },
+    "subjectId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
     "authSubjectRef": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "legacyLocalAccountId": {
       "type": [
         "string",
         "null"
       ],
       "maxLength": 200,
-      "description": "Opaque protected credential-authority subject reference; not a password/hash/token."
+      "description": "Migration evidence only; never a secret."
+    },
+    "status": {
+      "enum": [
+        "active",
+        "disabled",
+        "pending"
+      ]
     },
     "recordVersion": {
       "type": "integer",

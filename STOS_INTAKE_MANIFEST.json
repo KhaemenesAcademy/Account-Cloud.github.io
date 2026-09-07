@@ -1,0 +1,32 @@
+{
+  "schema": "khaemenes-account-cloud-stos-intake-v1",
+  "name": "Khaemenes Account Cloud",
+  "version": "0.2.0",
+  "releaseClass": "stos-pre-intake",
+  "productionDataAllowed": false,
+  "githubRuntimeAuthority": false,
+  "targetNamespace": "khaemenes-account-cloud",
+  "sessionBoundary": "wend-v0.1",
+  "browserAuthorizationAuthority": false,
+  "requires": {
+    "storageAdapter": [
+      "durable persistence",
+      "compare-and-swap or transaction",
+      "audit append",
+      "recovery evidence",
+      "namespace isolation"
+    ],
+    "authorities": [
+      "Klik or commissioned policy authority",
+      "Avouch or bounded validation",
+      "Wend session boundary"
+    ]
+  },
+  "forbiddenRuntimeDependencies": [
+    "GitHub database role",
+    "browser localStorage identity authority",
+    "external database dependency",
+    "NextJS modification"
+  ],
+  "syntheticAcceptanceRequired": true
+}

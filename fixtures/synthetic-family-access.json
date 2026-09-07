@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "2.0",
+  "accessId": "access_demo_guardian_learner",
+  "familyId": "fam_demo",
+  "adultId": "adult_demo_guardian",
+  "learnerId": "learner_demo",
+  "permissions": [
+    "learner.view",
+    "learner.manage",
+    "education.manage",
+    "student.password.reset",
+    "student.account.unlock"
+  ],
+  "status": "active",
+  "recordVersion": 1,
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z"
+}

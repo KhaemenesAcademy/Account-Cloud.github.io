@@ -1,45 +1,13 @@
 # Security Boundary
 
 ## GitHub repository
-
-Trust level: public/static/untrusted.
-
-Allowed:
-
-- source code;
-- public contracts;
-- JSON Schemas;
-- synthetic fixtures;
-- non-secret example configuration;
-- browser-safe test harnesses.
-
-Forbidden:
-
-- real family/student data;
-- passwords or password hashes;
-- session/recovery tokens;
-- encryption keys;
-- private GitHub/STOS credentials;
-- real educational records.
+Trust level: public/static/untrusted. Allowed: source, contracts, schemas, synthetic fixtures, non-secret examples, browser-safe test harnesses. Forbidden: real family/student data, private educational records, passwords/hashes, tokens/codes, session cookies, refresh credentials, encryption keys, private service credentials, backend trust secrets.
 
 ## Protected STOS runtime
+Owns canonical family/learner persistence, trusted authorization/validation, audit, migration, recovery receipts, and the native storage adapter. Credential authority and Wend remain separate authorities.
 
-Owns:
+## Browser
+The browser may hold public UI preferences and local fallback evidence, but never becomes identity/authorization authority. Account Cloud browser code does not use localStorage/sessionStorage for credentials or canonical records.
 
-- authentication;
-- authorization;
-- canonical family/learner records;
-- durable persistence;
-- sessions;
-- audit;
-- recovery;
-- cross-device continuity.
-
-The Mini AGI Account Cloud UI is a control/view surface. Displaying a record does not make the UI the authority.
-
-
-## Sovereign Mini Cloud OS local-vault boundary
-
-The preserved Sovereign Mini Cloud OS reference contains an encrypted browser-local Private/Black Hole Vault. Encryption at rest is useful, but locality remains locality: the vault is not a server, cross-device authority, or Academy credential database.
-
-The Account Cloud UI may describe or inspect this boundary, but production family/learner continuity must resolve through the protected STOS storage authority.
+## Course firewall
+Account Cloud may mirror course progress/mastery for continuity/reporting. Browser sync cannot modify `masteryPercent`; only a trusted course authority may update the mirror.

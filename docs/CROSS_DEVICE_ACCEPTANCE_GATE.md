@@ -1,39 +1,44 @@
 # Cross-Device Acceptance Gate
 
-No real family/student data should be introduced until the synthetic account passes this gate.
+No real family/student data enters protected Account Cloud until every synthetic item below passes.
 
 ## Runtime
-
-- [ ] protected Account Cloud service health PASS
+- [ ] protected Account Cloud health PASS
 - [ ] storage adapter health PASS
-- [ ] one canonical family record persists server-side
-- [ ] one canonical learner record persists server-side
-- [ ] compare-and-swap/version conflict behavior PASS
-- [ ] audit append behavior PASS
-- [ ] restart persistence PASS
+- [ ] canonical family/learner persists server-side across service restart
+- [ ] compare-and-swap conflict behavior PASS
+- [ ] audit append PASS
+- [ ] storage recovery evidence PASS
+- [ ] no GitHub runtime dependency
+
+## Session / Wend
+- [ ] browser receives opaque HttpOnly cookie only
+- [ ] no OHMIC/Bunya refresh credential reaches browser
+- [ ] `metadata.roles` cannot authorize or unlock an action
+- [ ] logout destroys browser session
+- [ ] Wend restart invalidates session without deleting family/learner data
 
 ## Mac
-
-- [ ] clean browser sign-in restores synthetic adult/family/learner
+- [ ] clean sign-in restores synthetic adult/family/learner
 - [ ] no authority token in localStorage/sessionStorage
-- [ ] write increments server `recordVersion`
-- [ ] sign-out revokes session
+- [ ] permitted write increments server `recordVersion`
+- [ ] immutable-field attack is rejected
 
 ## Tablet
+- [ ] clean sign-in restores exact same familyId/learnerId/institutionalId
+- [ ] stale write receives 409
+- [ ] refresh receives canonical version
+- [ ] valid post-refresh write succeeds
 
-- [ ] clean browser sign-in restores the same synthetic adult/family/learner
-- [ ] exact same `learnerId`
-- [ ] exact same institutional ID
-- [ ] stale write receives 409 conflict
-- [ ] refresh receives current canonical version
-- [ ] new write after refresh succeeds
+## Isolation / academic firewall
+- [ ] cross-family read denied
+- [ ] cross-learner management denied without explicit access
+- [ ] browser cannot modify family-access permissions through generic sync
+- [ ] browser cannot modify mastery/course-authority fields
 
-## Final synthetic seal
-
+## Final seal
 - [ ] Mac -> server -> tablet propagation PASS
 - [ ] tablet -> server -> Mac propagation PASS
-- [ ] no duplicate learner record created
-- [ ] no duplicate institutional ID created
+- [ ] no duplicate family/learner/institutional-ID created
+- [ ] password reset/unlock leaves no recovery secret in browser storage
 - [ ] no real account data used
-
-Only after this synthetic seal should production family/student migration be considered.

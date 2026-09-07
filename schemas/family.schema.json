@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/family.schema.json",
+  "$id": "khaemenes://account-cloud/v2/family.schema.json",
   "title": "Khaemenes Family",
   "type": "object",
   "additionalProperties": false,
@@ -16,7 +16,7 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "1.0"
+      "const": "2.0"
     },
     "familyId": {
       "type": "string",

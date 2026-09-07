@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "receiptId": "migration_demo_001",
+  "sourceKind": "academy-browser-local",
+  "sourceDeviceId": "device_mac_demo",
+  "familyId": "fam_demo",
+  "learnerIds": [
+    "learner_demo"
+  ],
+  "legacyAccountMappings": [
+    {
+      "learnerId": "learner_demo",
+      "legacyLocalAccountId": "learneracct_demo_legacy",
+      "accountLinkId": "acctlink_demo_learner"
+    }
+  ],
+  "result": "accepted",
+  "createdAt": "2026-09-07T00:00:00Z",
+  "synthetic": true
+}

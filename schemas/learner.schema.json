@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "khaemenes://account-cloud/learner.schema.json",
+  "$id": "khaemenes://account-cloud/v2/learner.schema.json",
   "title": "Khaemenes Learner",
   "type": "object",
   "additionalProperties": false,
@@ -18,7 +18,7 @@
   ],
   "properties": {
     "schemaVersion": {
-      "const": "1.0"
+      "const": "2.0"
     },
     "learnerId": {
       "type": "string",
@@ -28,25 +28,57 @@
       "type": "string",
       "pattern": "^fam_"
     },
+    "accountSubjectRef": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 200,
+      "description": "Opaque protected student-account authority reference. Not a credential."
+    },
     "institutionalId": {
       "type": "string",
-      "minLength": 4,
-      "maxLength": 80
+      "pattern": "^(KA|KS)-\\d{4}-(?:[A-F0-9]{10}|[A-F0-9]{20})$"
+    },
+    "institutionalIdStatus": {
+      "enum": [
+        "provisional",
+        "confirmed",
+        "migrated"
+      ]
     },
     "displayName": {
       "type": "string",
       "maxLength": 120
     },
     "stage": {
-      "type": "string",
-      "maxLength": 80
+      "enum": [
+        "preschool",
+        "kindergarten",
+        "elementary",
+        "middle",
+        "high",
+        "higher"
+      ]
     },
     "grade": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "maxLength": 40
+      "enum": [
+        "pre-k",
+        "k",
+        "01",
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        null
+      ]
     },
     "activePathway": {
       "type": "string",

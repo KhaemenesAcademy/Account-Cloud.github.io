@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "2.0",
+  "institutionalId": "KA-2026-A1B2C3D4E5F60718293A",
+  "learnerId": "learner_demo",
+  "kind": "student",
+  "status": "confirmed",
+  "previousInstitutionalId": null,
+  "recordVersion": 1,
+  "createdAt": "2026-09-07T00:00:00Z",
+  "updatedAt": "2026-09-07T00:00:00Z"
+}

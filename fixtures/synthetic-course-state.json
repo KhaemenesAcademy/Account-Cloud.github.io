@@ -1,12 +1,12 @@
 {
   "schemaVersion": "2.0",
-  "progressId": "progress_demo",
+  "courseStateId": "course_state_demo",
   "learnerId": "learner_demo",
   "courseId": "khaemenes-high-prealgebra",
-  "courseStateId": "course_state_demo",
-  "lastLessonId": "unit-01-lesson-01",
-  "completionPercent": 4.0,
+  "status": "active",
+  "masteryPercent": 82.0,
   "authority": "course-engine",
+  "sourceEvidenceVersion": "synthetic-evidence-v1",
   "recordVersion": 1,
   "updatedAt": "2026-09-07T00:00:00Z"
 }
